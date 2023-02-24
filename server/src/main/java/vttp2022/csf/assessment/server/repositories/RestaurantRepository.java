@@ -101,10 +101,11 @@ public class RestaurantRepository {
 		// Implmementation in here
 		Criteria criteria = Criteria.where("name").is(name);
 	Query query = Query.query(criteria);
-	return template.find(query, Document.class, "restaurants")	
-	.stream().map(v->)
+	// return template.find(query, Document.class, "restaurants")	
+	// .stream().map(v->)
+	return null;
 
-	Object
+	
 	}
 
 	// TODO Task 5
