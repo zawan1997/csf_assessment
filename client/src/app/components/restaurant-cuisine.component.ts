@@ -16,7 +16,8 @@ export class RestaurantCuisineComponent implements OnInit {
 	// For View 2
 
   params$!:Subscription
-  restaurant!:Restaurant
+  cuisine!:string
+  restaurant!: Restaurant
 
   constructor(private fb:FormBuilder, private activatedRoute: ActivatedRoute, private rSvc: RestaurantService) {}
 
@@ -24,7 +25,7 @@ export class RestaurantCuisineComponent implements OnInit {
     this.params$ = this.activatedRoute.params.subscribe(
       (params) => {
         const cuisine = params['cuisine']
-        this.rSvc.getRestaurantsByCuisine(cuisine)
+        // this.restaurant = this.rSvc.getRestaurantsByCuisine(cuisine)
       }
     )
   }

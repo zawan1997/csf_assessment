@@ -87,7 +87,8 @@ public class RestaurantRepository {
 		// Mapping the result
 		List<String> restaraunts = document.stream().map(g -> g.getString("name")).toList();
 		return Optional.of(restaraunts);
-		//Get back a list of string of names. For task 4 use the name go back to repo to call other details
+
+		//Get back a list of string of names. For task 4 use the name go back to repo to call other
 	}
 
 	// TODO Task 4
@@ -96,9 +97,14 @@ public class RestaurantRepository {
 	// DO NOT CHNAGE THE METHOD'S NAME OR THE RETURN TYPE
 	// Write the Mongo native query above for this method
 	//
-	public Optional<Restaurant> getRestaurant(???) {
+	public Optional<Restaurant> getRestaurant(String name) {
 		// Implmementation in here
-		
+		Criteria criteria = Criteria.where("name").is(name);
+	Query query = Query.query(criteria);
+	return template.find(query, Document.class, "restaurants")	
+	.stream().map(v->)
+
+	Object
 	}
 
 	// TODO Task 5

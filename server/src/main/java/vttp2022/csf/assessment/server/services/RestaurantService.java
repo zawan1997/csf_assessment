@@ -30,6 +30,17 @@ public class RestaurantService {
 	// Use the following method to get a list of restaurants by cuisine
 	// You can add any parameters (if any) and the return type 
 	// DO NOT CHNAGE THE METHOD'S NAME
+	public Optional<List<Restaurant>> getRestaurantsByCuisine(String name) {
+		// Implmementation in here
+		Restaurant restaurant = new Restaurant();
+		Optional<List<String>> names =  restaurantRepo.getRestaurantsByCuisine(name);
+		if(names.isPresent()) {
+			for(int i = 0; i<names.size(); i ++)
+			restaurant.setName(names.get(i));
+		}
+	}
+
+	//Duplicate of task 3. Attempting different method
 	public Optional<List<String>> getRestaurantsByCuisine(String name) {
 		// Implmementation in here
 		return restaurantRepo.getRestaurantsByCuisine(name);
