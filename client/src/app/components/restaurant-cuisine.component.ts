@@ -25,7 +25,7 @@ export class RestaurantCuisineComponent implements OnInit {
     this.params$ = this.activatedRoute.params.subscribe(
       (params) => {
         const cuisine = params['cuisine']
-        // this.restaurant = this.rSvc.getRestaurantsByCuisine(cuisine)
+        this.restaurant = this.rSvc.getRestaurantsByCuisine(cuisine)
       }
     )
   }

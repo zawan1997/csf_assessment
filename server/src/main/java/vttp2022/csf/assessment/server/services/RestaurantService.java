@@ -35,17 +35,17 @@ public class RestaurantService {
 		Restaurant restaurant = new Restaurant();
 		Optional<List<String>> names = restaurantRepo.getRestaurantsByCuisine(name);
 		if (names.isPresent()) {
-			// for(int i = 0; i<names.size(); i ++)
-			// restaurant.setName(names.get(i));
+			for(int i = 0; i<names.size(); i ++)
+			restaurant.setName(names.get(i));
 		}
 		return null;
 	}
 
 	// Duplicate of task 3. Attempting different method
-	// public Optional<List<String>> getRestaurantsByCuisine(String name) {
-	// // Implmementation in here
-	// return restaurantRepo.getRestaurantsByCuisine(name);
-	// }
+	public Optional<List<String>> getRestaurantsByCuisine(String name) {
+	// Implmementation in here
+	return restaurantRepo.getRestaurantsByCuisine(name);
+	}
 
 	// TODO Task 4
 	// Use this method to find a specific restaurant
